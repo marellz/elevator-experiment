@@ -1,0 +1,38 @@
+.elevator {
+  &--table {
+    border: 1px solid gray;
+    tr {
+      &:first-child {
+        td {
+          border-top: none;
+        }
+      }
+    }
+    h6 {
+      width: 100px;
+      opacity: 0.4;
+    }
+  }
+  &--indicator {
+    $size: 40px;
+    height: $size;
+    width: $size;
+    content: "";
+    background: $color4;
+    opacity: 0.2;
+
+    &.active {
+      opacity: 1;
+    }
+  }
+
+  &--button {
+    &+&{
+        margin-left: 1em;
+    }
+    color: $color4;
+    &.requested {
+      color: $primary;
+    }
+  }
+}
