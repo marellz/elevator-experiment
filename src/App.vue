@@ -11,14 +11,14 @@
           <div class="col-sm-12 col-lg-6">
             <elevator @log="logger"></elevator>
           </div>
-          <div class="col-sm-12 col-lg-6">
+          <div class="col-sm-12 col-lg-6 elevator--logger">
             <p class="text-underlined">Elevator logs:</p>
-            <hr />
-            <div>
-              <pre>
-                <code class="d-block" v-for="(log,i) in logs" :key="i">elevator: {{log}}</code>
-              </pre>
-            </div>
+            <pre
+              style="height:300px"
+              class="d-flex flex-column-reverse border overflow-auto"
+            >
+                   <code class="d-block" v-for="(log,i) in logs.reverse()" :key="i">elevator: {{log}}</code>
+                 </pre>
           </div>
         </div>
       </div>
@@ -48,6 +48,9 @@ export default {
   methods: {
     logger(data) {
       this.logs.push(data);
+    },
+    clearLogs() {
+      this.logs = [];
     },
   },
 };
