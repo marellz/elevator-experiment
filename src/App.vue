@@ -17,8 +17,8 @@
               style="height:300px"
               class="d-flex flex-column-reverse border overflow-auto"
             >
-                   <code class="d-block" v-for="(log,i) in logs.reverse()" :key="i">elevator: {{log}}</code>
-                 </pre>
+              <code class="d-block" v-for="(log,i) in logs.reverse()" :key="i">elevator: {{log}}</code>
+            </pre>
           </div>
         </div>
       </div>
